@@ -37,17 +37,7 @@ if (getTimeZoneCountry() == "India") {
          <h3>State Bank of India (SBI) Loan Offerings</h3>
     <p>State Bank of India (SBI) is the largest public sector bank in India, offering a variety of loan products designed to meet the financial needs of individuals and businesses. From home loans to personal loans, SBI provides affordable interest rates, flexible repayment options, and a variety of services. Below is a detailed guide to the various loans available at SBI, including the types of loans, interest rates, policies, eligibility criteria, and key features.</p>
 
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-    <div id="gpt-passback">
-      <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_002', ['fluid', [320, 100]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_002']);
-        googletag.enableServices();
-        googletag.display('gpt-passback');
-        });
-      </script>
-    </div>
+    
 
     <h4>1. Personal Loan from SBI</h4>
     <p><strong>Overview:</strong> SBI's personal loan is designed to help individuals meet their immediate financial needs such as medical expenses, wedding expenses, travel, home renovation, etc. It is an unsecured loan, meaning no collateral is required to avail it.</p>
@@ -72,17 +62,7 @@ if (getTimeZoneCountry() == "India") {
         </ul>
     </p>
 
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-    <div id="gpt-passback">
-      <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_003', ['fluid', [300, 250], [336, 280]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_003']);
-        googletag.enableServices();
-        googletag.display('gpt-passback');
-        });
-      </script>
-    </div>
+    
 
     <h4>2. Home Loan from SBI</h4>
     <p><strong>Overview:</strong> SBI offers a range of home loan products to help individuals buy a home, build a house, or renovate their existing property. With competitive interest rates and long repayment tenures, SBI home loans are popular among homebuyers in India.</p>
@@ -108,17 +88,7 @@ if (getTimeZoneCountry() == "India") {
         </ul>
     </p>
 
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-    <div id="gpt-passback">
-      <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_004', ['fluid', [468, 60], [336, 280], [300, 250], [320, 480]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_004']);
-        googletag.enableServices();
-        googletag.display('gpt-passback');
-        });
-      </script>
-    </div>
+    
 
     <h4>3. Car Loan from SBI</h4>
     <p><strong>Overview:</strong> SBI provides car loans at attractive interest rates to help customers purchase new or used cars. The loan comes with flexible repayment terms and a range of options to choose from for both salaried and self-employed individuals.</p>
