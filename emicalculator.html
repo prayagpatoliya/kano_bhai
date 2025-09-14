@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from one.quizzigo.com/emicalculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // Get the user's preferred language from localStorage or default to 'en' (English)
+            const userLang = localStorage.getItem('language') || 'en';  
+            // Initialize Google Translate with the user's language preference
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',  // Original language of the page
+                    includedLanguages: 'in,hi,es,fr,pt,ru,tr,mr,the,we',  // List of languages to include in the widget
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: true  // Automatically display the widget
+                },
+                'google_translate_element'
+            );
+        
+            const observer = new MutationObserver(() => {
+                const languageSelect = document.querySelector('.goog-te-menu-value span');
+                if (languageSelect) {
+                    observer.disconnect(); // Stop observing once the widget is found
+                    setTimeout(() => {
+                        const languageLinks = document.querySelectorAll('.goog-te-menu2-item span');
+                        languageLinks.forEach((link) => {
+                            if (link.textContent.toLowerCase() === userLang.toLowerCase()) {
+                                link.click(); // Trigger the language selection
+                            }
+                        });
+                    }, 500); // Wait for the menu to fully load
+                }
+            });
+        
+            // Observe changes in the DOM
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+        </script>
+        <script type="text/javascript" src="translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+        
+    <script src="cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "72c21d48-a011-424d-9b4f-20a7aaf5d59b",
+        });
+      });
+    </script>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="cdn.jsdelivr.net/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161" crossorigin="anonymous"></script>
+    <style>
+        #text-container {
+            font-size: 1.2rem;
+            background: #A8D683;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .input-group-text, input {
+            background: #F1F1F1 !important;
+            padding: 0.7rem !important;
+        }
+        .form-check-label {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-check-input:checked + .form-check-label {
+            background-color: #A8D683;
+            color: #000;
+        }
+        .doughnut-chart {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: conic-gradient(#A8D683 0% 50%, #000 50% 100%);
+            margin: 15px 0;
+        }
+        .doughnut-chart:before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 40%;
+            height: 40%;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px white;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .chart-labels li {
+            position: relative;
+            padding-left: 20px;
+        }
+        .chart-labels li span {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .chart-labels li:first-child span {
+            background-color: #A8D683;
+        }
+        .chart-labels li:last-child span {
+            background-color: #000;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .goog-te-menu-frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 50px;
+        }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate, #google_translate_element {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="text-container">
+                <img src="assets/images/left-arrow.png" alt="Back" width="25px" class="float-start ms-3" onclick="window.location=document.referrer">
+                EMI Calculator
+            </div>
+            <div class="card p-2 shadow-sm">
+                <!-- Principal Amount -->
+                <div class="mb-3">
+                    <label for="principal" class="form-label">Principal Amount</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="principal" value="50000" />
+                        <span class="input-group-text">₹</span>
+                    </div>
+                </div>
+                <!-- Interest Rate -->
+                <div class="mb-3">
+                    <label for="interest" class="form-label">Interest Rate (%)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="interest" value="10" />
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+                <!-- Loan Tenure -->
+                <div class="mb-3 row">
+                    <label for="tenure" class="form-label">Loan Tenure</label>
+                    <div class="row align-items-center">
+                        <div class="col-6 pe-0">
+                            <input type="number" class="form-control" id="tenure" placeholder="Enter tenure" />
+                        </div>
+                        <div class="col-6 d-flex p-0">
+                            <div class="form-check me-2">
+                                <input class="form-check-input d-none" type="radio" name="tenure-type" id="year-radio" value="year" checked>
+                                <label class="form-check-label" for="year-radio">Year</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input d-none" type="radio" name="tenure-type" id="month-radio" value="month">
+                                <label class="form-check-label" for="month-radio">Month</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="mb-4 text-center">
+                    <button id="calculate-btn" class="btn btn-custom w-100 mb-2">Calculate</button>
+                    <button id="reset-btn" class="btn btn-secondary w-100">Reset</button>
+                </div>
+                <!-- Results -->
+
+                <div class="result">
+                    <div class="mb-2 btnBorder">
+                        <button class="btn btn-custom w-100 mb-2">Calculation Result</button>
+                        <p class="p-1 small">Total Interest Amount: <strong class="float-end"><span id="total-interest">0₹</span></strong></p>
+                        <p class="p-1 small">Total Principal:<strong class="float-end"><span id="total-principal">0₹</span></strong></p>
+                        <p class="p-1 small">Total Payment (Principal + Interest):<strong class="float-end"><span id="total-payment">0₹</span></strong></p>
+                        <p class="p-1 small">EMI (Monthly Payment): <strong class="float-end"><span id="emi">0₹</span></strong></p>
+                    </div>
+    
+                    <div class="text-center">
+                        <button id="view-details-btn" class="btn btn-custom w-50 p-2">View Details</button>
+                    </div>
+                </div>
+
+                <!-- <div class="result">
+                    <p>Total Interest Amount: <strong><span id="total-interest">0₹</span></strong></p>
+                    <p>Total Principal: <strong><span id="total-principal">0₹</span></strong></p>
+                    <p>Total Payment (Principal + Interest): <strong><span id="total-payment">0₹</span></strong></p>
+                    <p>EMI (Monthly Payment): <strong><span id="emi">0₹</span></strong></p>
+                </div> -->
+                <!-- Doughnut Chart -->
+                <!-- <div class="row">
+                    <div class="doughnut-chart col-6">
+                        <div class="chart-center">50%</div>
+                    </div>
+                    <div class="chart-labels col-6">
+                        <ul style="list-style: none; padding: 0;">
+                            <li><span></span> Principal</li>
+                            <li><span></span> Interest</li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="doughnut-chart col-6">
+                        <div class="chart-center">50%</div>
+                    </div>
+                
+                    <div class="chart-labels col-6">
+                        
+                        <ul style="list-style: none; padding: 0;display: flex;flex-direction: column-reverse;justify-content: center;">
+                            <li style="position: relative; padding-left: 20px;">
+                                <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background-color: #A8D683; border-radius: 50%;"></span>
+                                Principal
+                            </li>
+                            <li style="position: relative; padding-left: 20px;">
+                                <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background-color: #000000; border-radius: 50%;"></span>
+                                Interest
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const calculateEMI = () => {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const interestRate = parseFloat(document.getElementById('interest').value);
+            const tenureInput = parseInt(document.getElementById('tenure').value);
+            const isYear = document.getElementById('year-radio').checked;
+
+            // Convert years to months if selected
+            const tenure = isYear ? tenureInput * 12 : tenureInput;
+
+            // EMI calculation formula
+            const monthlyRate = interestRate / 12 / 100;
+            const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenure)) /
+                        (Math.pow(1 + monthlyRate, tenure) - 1);
+
+            const totalPayment = emi * tenure;
+            const totalInterest = totalPayment - principal;
+
+            // Display results
+            document.getElementById('emi').innerText = `${emi.toFixed(2)}₹`;
+            document.getElementById('total-interest').innerText = `${totalInterest.toFixed(2)}₹`;
+            document.getElementById('total-principal').innerText = `${principal.toFixed(2)}₹`;
+            document.getElementById('total-payment').innerText = `${totalPayment.toFixed(2)}₹`;
+        };
+
+        const resetFields = () => {
+            document.getElementById('principal').value = '';
+            document.getElementById('interest').value = '';
+            document.getElementById('tenure').value = '';
+            document.getElementById('emi').innerText = '0₹';
+            document.getElementById('total-interest').innerText = '0₹';
+            document.getElementById('total-principal').innerText = '0₹';
+            document.getElementById('total-payment').innerText = '0₹';
+        };
+
+        document.getElementById('calculate-btn').addEventListener('click', calculateEMI);
+        document.getElementById('reset-btn').addEventListener('click', resetFields);
+    </script>
+</body>
+
+<!-- Mirrored from one.quizzigo.com/emicalculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:44 GMT -->
+</html>

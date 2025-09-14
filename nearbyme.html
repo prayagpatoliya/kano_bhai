@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from one.quizzigo.com/nearbyme.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Me</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/app.css">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // Get the user's preferred language from localStorage or default to 'en' (English)
+            const userLang = localStorage.getItem('language') || 'en';  
+            // Initialize Google Translate with the user's language preference
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',  // Original language of the page
+                    includedLanguages: 'in,hi,es,fr,pt,ru,tr,mr,the,we',  // List of languages to include in the widget
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: true  // Automatically display the widget
+                },
+                'google_translate_element'
+            );
+        
+            const observer = new MutationObserver(() => {
+                const languageSelect = document.querySelector('.goog-te-menu-value span');
+                if (languageSelect) {
+                    observer.disconnect(); // Stop observing once the widget is found
+                    setTimeout(() => {
+                        const languageLinks = document.querySelectorAll('.goog-te-menu2-item span');
+                        languageLinks.forEach((link) => {
+                            if (link.textContent.toLowerCase() === userLang.toLowerCase()) {
+                                link.click(); // Trigger the language selection
+                            }
+                        });
+                    }, 500); // Wait for the menu to fully load
+                }
+            });
+        
+            // Observe changes in the DOM
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+        </script>
+        <script type="text/javascript" src="translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+        
+    <script src="cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "72c21d48-a011-424d-9b4f-20a7aaf5d59b",
+        });
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161" crossorigin="anonymous"></script>
+
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+        adConfig({
+             preloadAdBreaks: 'on',
+             sound: 'off',
+        });
+    </script>
+    <style>
+        body {
+            /* margin: 0;
+            padding: 0; */
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        #text-container {
+            font-size: 1.2rem;
+            background: #A8D683;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .row-item img {
+            width: 50px;
+        }
+
+        .row-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .row-item:hover {
+            background-color: #e9ecef; /* Light hover effect */
+        }
+
+        hr {
+            margin: 0;
+            border-color: #ddd;
+        }
+
+        .icon-right {
+            font-size: 1.5rem;
+        }
+        .banner{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .goog-te-menu-frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 50px;
+        }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate, #google_translate_element {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Main Content Area -->
+        <div class="col-md-6 p-0">
+            
+            <div id="text-container">
+                <img src="assets/images/left-arrow.png" alt="Back" width="25px" class="float-start ms-3" onclick="window.location='category.html'">
+                Nearby Me
+            </div>
+
+            <!-- List of Categories -->
+            <div id="image-container" style="overflow-x: hidden;">
+                <!-- Each Row -->
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Bank/'">
+                    <div class="col-2"><img src="assets/images/Bank.png" alt="Bank"></div>
+                    <div class="col-8"><span>Bank</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/ATM/'">
+                    <div class="col-2"><img src="assets/images/ATM.png" alt="ATM"></div>
+                    <div class="col-8"><span>ATM</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Hospital/'">
+                    <div class="col-2"><img src="assets/images/Hospital.png" alt="Hospital"></div>
+                    <div class="col-8"><span>Hospital</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <!-- Add more rows as needed -->
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Restaurants/'">
+                    <div class="col-2"><img src="assets/images/Restaurants.png" alt="Restaurants"></div>
+                    <div class="col-8"><span>Restaurants</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <!-- Additional rows -->
+                <!-- Repeat this block for other categories -->
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Police Station/'">
+                    <div class="col-2"><img src="assets/images/Police%20Station.png" alt="Police Station"></div>
+                    <div class="col-8"><span>Police Station</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="banner">
+                    <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 300px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/School/'">
+                    <div class="col-2"><img src="assets/images/School.png" alt="School"></div>
+                    <div class="col-8"><span>School</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Fire Station/'">
+                    <div class="col-2"><img src="assets/images/Fire%20Station.png" alt="Fire Station"></div>
+                    <div class="col-8"><span>Fire Station</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Petrol Pumps/'">
+                    <div class="col-2"><img src="assets/images/Petrol%20Pumps.png" alt="Petrol Pumps"></div>
+                    <div class="col-8"><span>Petrol Pumps</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Hotels/'">
+                    <div class="col-2"><img src="assets/images/Hotels.png" alt="Hotels"></div>
+                    <div class="col-8"><span>Hotels</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Gym/'">
+                    <div class="col-2"><img src="assets/images/Gym.png" alt="Gym"></div>
+                    <div class="col-8"><span>Gym</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+            <!--     <div class="banner">
+                    <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 280px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div> -->
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Movie Theater/'">
+                    <div class="col-2"><img src="assets/images/Movie%20Theater.png" alt="Movie Theater"></div>
+                    <div class="col-8"><span>Movie Theater</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Medical Center/'">
+                    <div class="col-2"><img src="assets/images/Medical%20Center.png" alt="Medical Center"></div>
+                    <div class="col-8"><span>Medical Center</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Malls/'">
+                    <div class="col-2"><img src="assets/images/Malls.png" alt="Malls"></div>
+                    <div class="col-8"><span>Malls</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Railway Station/'">
+                    <div class="col-2"><img src="assets/images/Railway%20Station.png" alt="Railway Station"></div>
+                    <div class="col-8"><span>Railway Station</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Bus Stop/'">
+                    <div class="col-2"><img src="assets/images/Bus%20Stop.png" alt="Bus Stop"></div>
+                    <div class="col-8"><span>Bus Stop</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <!-- <div class="banner">
+                    <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 350px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div> -->
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Taxi Services/'">
+                    <div class="col-2"><img src="assets/images/Taxi%20Services.png" alt="Taxi Services"></div>
+                    <div class="col-8"><span>Taxi Services</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Temple/'">
+                    <div class="col-2"><img src="assets/images/Temple.png" alt="Temple"></div>
+                    <div class="col-8"><span>Temple</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+                <hr>
+                <div class="row align-items-center row-item p-3" onclick="window.location='https://www.google.com/maps/search/Airport/'">
+                    <div class="col-2"><img src="assets/images/Airport.png" alt="Airport"></div>
+                    <div class="col-8"><span>Airport</span></div>
+                    <div class="col-2 text-end"><i class="fa fa-arrow-circle-right icon-right" aria-hidden="true"></i></div>
+                </div>
+
+                <!-- <div class="banner">
+                    <ins class="adsbygoogle" style="display:block; width: 100% !important; height: auto !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                </div> -->
+                <br>
+                    <div class="container">
+                        <h4>About Us: Comprehensive Loan Solutions</h4>
+                        <p>We provide financial solutions tailored to your needs. Our offerings include home loans, gold loans, vehicle loans (car and two-wheeler loans), mortgage loans, personal loans, education loans, and loans against securities.</p>
+                
+                        <h2>Our Loan Categories</h2>
+                        <ul>
+                            <li><strong>Home Loans:</strong> Make your dream of owning a home a reality.</li>
+                            <li><strong>Gold Loans:</strong> Instant funds secured by your gold.</li>
+                            <li><strong>Car and Two-Wheeler Loans:</strong> Easy financing for new and used vehicles.</li>
+                            <li><strong>Mortgage Loans:</strong> Leverage your property to meet financial needs.</li>
+                            <li><strong>Personal Loans:</strong> Flexible solutions for personal milestones.</li>
+                            <li><strong>Education Loans:</strong> Fund quality education with Baroda Vidya and Baroda Scholar loans.</li>
+                            <li><strong>Loans Against Securities:</strong> Liquidity without liquidating investments.</li>
+                        </ul>
+                
+                        <p>Explore our specialized offerings like business loans, agricultural loans, travel loans, and digital loans to meet diverse financial goals. Choose us for transparent processes, quick approvals, and customer-focused services. Let us help you achieve your dreams.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- Mirrored from one.quizzigo.com/nearbyme.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:43 GMT -->
+</html>

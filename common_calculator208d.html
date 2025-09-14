@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from one.quizzigo.com/common_calculator.html?page=Sukanya%20Samriddhi%20Account by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // Get the user's preferred language from localStorage or default to 'en' (English)
+            const userLang = localStorage.getItem('language') || 'en';  
+            // Initialize Google Translate with the user's language preference
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',  // Original language of the page
+                    includedLanguages: 'in,hi,es,fr,pt,ru,tr,mr,the,we',  // List of languages to include in the widget
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: true  // Automatically display the widget
+                },
+                'google_translate_element'
+            );
+        
+            const observer = new MutationObserver(() => {
+                const languageSelect = document.querySelector('.goog-te-menu-value span');
+                if (languageSelect) {
+                    observer.disconnect(); // Stop observing once the widget is found
+                    setTimeout(() => {
+                        const languageLinks = document.querySelectorAll('.goog-te-menu2-item span');
+                        languageLinks.forEach((link) => {
+                            if (link.textContent.toLowerCase() === userLang.toLowerCase()) {
+                                link.click(); // Trigger the language selection
+                            }
+                        });
+                    }, 500); // Wait for the menu to fully load
+                }
+            });
+        
+            // Observe changes in the DOM
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+        </script>
+        <script type="text/javascript" src="translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+        
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="cdn.jsdelivr.net/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="generateField.js"></script>
+    <script src="cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "72c21d48-a011-424d-9b4f-20a7aaf5d59b",
+        });
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161" crossorigin="anonymous"></script>
+
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+        adConfig({
+             preloadAdBreaks: 'on',
+             sound: 'off',
+        });
+    </script>
+    <style>
+        /* .container {
+            max-width: 600px;
+            margin-top: 50px;
+        } */
+        .result p {
+            margin: 5px 0;
+        }
+        
+        .btn-custom:hover {
+            background-color: #A8D683;
+        }
+        .tenure-toggle button.active {
+            background-color: #A8D683;
+        }
+        #text-container {
+            font-size: 1.2rem;
+            background: #A8D683;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        input, .input-group-text{
+            background: #F1F1F1 !important;
+            padding: 0.7rem !important;
+        }
+
+        .input-group .input-group-text {
+            border-left: 0; /* Remove the right border of the rupee symbol */
+            font-weight: bold;
+        }
+
+        .input-group .form-control {
+            border-right: 0; /* Remove the left border of the input field */
+            border-radius: 0.375rem; /* Optional: to keep the rounded corners */
+        }
+
+        #reset-btn{
+            border: 1px solid #A8D683;
+        }
+
+        .btnBorder{
+            border: 1px solid #A8D683;
+            border-radius: 0.375rem;
+        }
+        .btnBorder .btnBorder{
+            border: 1px solid #A8D683;
+        }
+
+        /************************** Chart CSS ***********************/
+        .doughnut-chart {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #A8D683 0% 50%,     /* Dark Gray (50%) */
+                #000 50% 100%    /* Light Green (50%) */
+            );
+            margin: 15px 0;
+        }
+
+        .doughnut-chart:before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 40%;
+            height: 40%;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px white;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Labels for the chart */
+        .chart-labels {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .label {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .label div {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+
+        .label.dark { background-color: #000; }
+        .label.green { background-color: #A8D683; }
+
+        .btn-custom {
+            background-color: #F1F1F1;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .form-check-input {
+            display: none; /* Hide the actual radio button */
+        }
+
+        .form-check-input:checked + .form-check-label, #calculate-btn {
+            background-color: #A8D683; /* Active button color */
+            color: #000;
+        }
+
+        .form-check-label {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .banner{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .goog-te-menu-frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 50px;
+        }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate, #google_translate_element {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container p-0">
+        <div id="text-container">
+            <img src="assets/images/left-arrow.png" alt="Back" width="25px" class="float-start ms-3" onclick="window.location='category.html'">
+            <span>Compound Calculator</span>
+        </div>
+        <div class="card p-2 shadow-sm" >
+            <form name="calculation" id="calculation" action="#" onsubmit="handleSubmit(event)">
+
+                <div id="dynamic-content">
+    
+                </div>
+                <div class="mb-4 text-center">
+                    <button type="submit" id="calculate-btn" class="btn btn-custom w-100 mb-2">Calculate</button>
+                    <button id="reset-btn" class="btn w-100">Reset</button>
+                </div>
+            </form>
+            <div class="banner">
+                <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 300px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS and Popper.js CDN -->
+    <script src="cdn.jsdelivr.net/npm/%40popperjs/core%402.11.6/dist/umd/popper.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/bootstrap%405.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const page = urlParams.get('page')
+
+        const container = document.getElementById('dynamic-content');
+        let field = '';
+        
+        let pageName = document.getElementById('text-container');
+        let spanElement = pageName.querySelector('span'); // Select the span inside the container
+        spanElement.innerHTML = page;
+        document.title = page;
+
+        if(page == "SPI Calculator" || page == "Equity Saving" || page == "Lumpsum Calculator"){
+
+            field = generateField({ type: "number", name: "investment_amount", label: "Investment Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "0",additionalParams: ["year", "month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "8", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "date", name: "investment_date", label: "Investment Date", value: "", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "SWP Calculator"){
+
+            field = generateField({ type: "number", name: "investment_amount", label: "Investment Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "0",additionalParams: ["year", "month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "8", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "number", name: "monthly_withdraw_amount", label: "Monthly Withdraw Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "date", name: "investment_date", label: "Investment Date", value: "", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "Interest Rate Calculator" || page == "Loan Tenure" || page == "Fund Calculator" || page == "Loan Amount"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Principal Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "2",additionalParams: ["year", "month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "EMI (Monthly Pay)", value: "8", symbol: "₹",is_parent_symbol :false, required: true});
+
+        }else if(page == "Moratorium Calculator"){
+
+            field = generateField({ type: "number", name: "investment_amount", label: "Investment Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "0",additionalParams: ["year", "month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "number", name: "installments_paid", label: "Installments Paid", value: "8", required: true});
+            field += generateField({ type: "number", name: "moratorium_period", label: "Moratorium Period", value: "10", required: true});
+            field += generateField({type: "radio",name: "options_change",label: "Select your options",options: ["No Change in EMI", "NO Change in Tenure"], required: true});
+        
+        }else if(page == "SIP Planner"){
+
+            field = generateField({ type: "number", name: "monthly_sip_amount", label: "Monthly SIP Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "years", label: "Years", value: "2",additionalParams: ["yearly"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            
+        }else if(page == "PM Jivan Jyoti" || page == "PM Suraksha" ){
+
+            field = generateField({ type: "number", name: "age", label: "Your Age", value: "25" , required: true});
+            field += generateField({ type: "number", name: "accident_insurance_cover", label: "Accident Insurance Cover", value: "200000",symbol: "₹", required: true});
+            field += generateField({ type: "number", name: "cover_available_till", label: "Cover Available Till (Years)", value: "50",additionalParams: ["Max 70"] , required: true});
+
+        }else if(page == "Gratuity Scheme"){
+
+            field = generateField({ type: "select", name: "emp_type", label: "Employee Type", options: ["Government Employee", "Private Employee"], required: true});
+            field += generateField({ type: "number", name: "monthly_income", label: "Monthly Income", value: "10000",symbol: "₹", required: true});
+            field += generateField({ type: "number", name: "monthly_da", label: "Monthly DA (Dearness Allowance)", value: "5000",symbol: "₹", required: true});
+            field += generateField({ type: "text", name: "emp_duration", label: "Employment Duration", value: "2020-2023", required: true});
+
+        }else if(page == "Sukanya Samriddhi Account"){
+
+            field = generateField({ type: "number", name: "age", label: "Girl Age (Max 10 year)", value: "5" , required: true});
+            field += generateField({ type: "number", name: "deposit_amount", label: "Deposit Amount", value: "200000",symbol: "₹", required: true});
+            field += generateField({ type: "select", name: "emp_type", label: "Employment Type", options: ["Monthly", "Bi-Monthly","Quarterly","Thrice Yearly","Half Yearly","Yearly"], required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "text", name: "deposite_period", label: "Deposite Period", value: "15 Years", required: true});
+            field += generateField({ type: "text", name: "maturity_period", label: "Maturity Period", value: "21 Years", required: true});
+
+        }else if(page == "Senior Citizen Scheme" || page == "Monthly Income Scheme"){
+
+            field = generateField({ type: "number", name: "investment_amount", label: "Investment Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "number", name: "period", label: "Period", value: "5", required: true});
+
+        }else if(page == "Kishan Vikas Patra"){
+
+            field = generateField({ type: "number", name: "investment_amount", label: "Investment Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "Intraday" || page == "Delivery" || page == "Future" || page == "Options"){
+
+            field = generateField({ type: "number", name: "buy_price", label: "Buy Price", value: "100", required: true});
+            field = generateField({ type: "number", name: "sell_price", label: "Sell Price", value: "150", required: true});
+            field = generateField({ type: "number", name: "quantity", label: "Quantity", value: "100", required: true});
+            field += generateField({ type: "number", name: "brokerage_fee", label: "Brokerage Fee", value: "1", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "Currency Converter" || page == "Delivery" || page == "Future" || page == "Options"){
+
+            field = generateField({ type: "number", name: "buy_price", label: "Buy Price", value: "100", required: true});
+            field = generateField({ type: "number", name: "sell_price", label: "Sell Price", value: "150", required: true});
+            field = generateField({ type: "number", name: "quantity", label: "Quantity", value: "100", required: true});
+            field += generateField({ type: "number", name: "brokerage_fee", label: "Brokerage Fee", value: "1", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "Amount to Word"){
+
+            field = generateField({ type: "number", name: "number", label: "Enter Number", value: "100", required: true});
+
+        }else if(page == "Percentage Calculator"){
+
+            field = generateField({ type: "number", name: "number", label: "Enter Number", value: "100", required: true});
+            field += generateField({ type: "number", name: "percenttage", label: "Percenttage", value: "1", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "Compound Calculator"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Principal Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "0",additionalParams: ["year"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({type: "radio",name: "interest_type",label: "Select Any One",options: ["Simple Interest", "Compound Interest"], required: true});
+            field += generateField({ type: "select", name: "interest_compounded", label: "Interest Compounded", options: ["Monthly", "Bi-Monthly","Quarterly","Thrice Yearly","Half Yearly","Yearly"], required: true});
+
+        }else if(page == "Fixed Deposite Calculator"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Principal Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "tenure", label: "Tenure", value: "0",additionalParams: ["year","month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({type: "radio",name: "interest_type",label: "Investment Frequency",options: ["Quarterly Investment", "Monthly Investment"], required: true});
+            field += generateField({ type: "date", name: "investment_date", label: "Investment Date", value: "", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "RD Calculator"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Monthly Deposite", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "saving_term", label: "Saving Term", value: "0",additionalParams: ["month"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "date", name: "investment_date", label: "Investment Date", value: "", symbol: "%",is_parent_symbol :false, required: true});
+
+        }else if(page == "PPF Calculator"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Deposite Amount", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "multiplies_duration", label: "Multiplies Duration", value: "0",additionalParams: ["year"] , required: true});
+            field += generateField({ type: "number", name: "interest", label: "Interest Rate", value: "10", symbol: "%",is_parent_symbol :false, required: true});
+            field += generateField({ type: "date", name: "investment_date", label: "Investment Date", value: "", symbol: "%",is_parent_symbol :false, required: true});
+            
+        }else if(page == "ROI Calculator"){
+
+            field = generateField({ type: "number", name: "principal_amount", label: "Starting Investment", value: "60000",symbol: "₹",is_parent_symbol :false , required: true});
+            field += generateField({ type: "number", name: "period", label: "Period(Years)", value: "0",additionalParams: ["year"] , required: true});
+            field += generateField({ type: "number", name: "last_investment", label: "Last Investment", value: "30000", symbol: "₹",is_parent_symbol :false, required: true});
+            
+        }else{
+
+        }
+
+        container.innerHTML = field;
+        
+
+    document.getElementById('reset-btn').addEventListener('click', function() {
+        document.getElementById('principal').value = '';
+        document.getElementById('interest').value = '';
+        document.getElementById('tenure').value = '';
+        document.getElementById('emi').innerText = '0';
+        document.getElementById('total-interest').innerText = '0';
+        document.getElementById('total-principal').innerText = '0';
+        document.getElementById('total-payment').innerText = '0';
+    });
+
+    // document.getElementById('calculate-btn').addEventListener('click', function() {
+    //     // Collecting form data
+    //     const investmentAmount = document.querySelector('input[name="investment_amount"]').value;
+    //     const tenure = document.querySelector('input[name="tenure"]').value;
+    //     const interest = document.querySelector('input[name="interest"]').value;
+    //     const investmentDate = document.querySelector('input[name="investment_date"]').value;
+        
+    //     // Perform calculations (Example for compound interest calculation)
+    //     // Assuming compound interest formula: A = P(1 + r/n)^(nt)
+    //     // Where: P = principal, r = annual interest rate, n = number of times interest is applied per time period, t = time the money is invested for
+    //     let principal = parseFloat(investmentAmount);
+    //     let rate = parseFloat(interest) / 100; // Convert percentage to decimal
+    //     let time = parseFloat(tenure);
+    //     let n = 12; // Compounding monthly
+        
+    //     // Calculate compound interest
+    //     let amount = principal * Math.pow((1 + rate / n), n * time);
+    //     let compoundInterest = amount - principal;
+
+    //     // Prepare data to pass to the result page
+    //     const resultData = {
+    //         investmentAmount: investmentAmount,
+    //         tenure: tenure,
+    //         interest: interest,
+    //         investmentDate: investmentDate,
+    //         compoundInterest: compoundInterest.toFixed(2),
+    //         totalAmount: amount.toFixed(2)
+    //     };
+        
+    //     // Convert data into query string format
+    //     const queryString = new URLSearchParams(resultData).toString();
+    //     alert();
+    //     // Redirect to result.html with the data in the URL
+    //     window.location.href = `result.html?${queryString}`;
+    // });
+
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get all input fields from the form
+        const form = document.getElementById('calculation');
+        const formData = new FormData(form);
+        
+        // Create an object to store form data
+        let data = {};
+        formData.forEach((value, key) => {
+            data[key] = value; // Collect form data into an object
+        });
+
+        // Validate required fields before proceeding (you can add more validation logic if needed)
+        let isValid = true;
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+            if (field.required && !field.value) {
+                isValid = false;
+                field.classList.add('error'); // Optional: Add a class to style invalid fields
+                alert(`${field.name || field.id} is required.`); // Show a simple alert for required fields
+            } else {
+                field.classList.remove('error'); // Remove error class if field is filled
+            }
+        });
+
+        if (isValid) {
+            // Perform your calculations here
+            // Example calculation (you can modify this based on your needs)
+            let calculationResult = {
+                total: parseFloat(data.investment_amount) * (1 + parseFloat(data.interest_rate) / 100)
+            };
+
+            // Add the calculated result to the data
+            data.calculationResult = calculationResult;
+
+            // Option 1: Pass data via URL (encoded)
+            const queryParams = new URLSearchParams(data).toString();
+            window.location.href = `result.html?${queryParams}`; // Redirect to result page with data in URL
+
+            // Option 2: Store data in sessionStorage (for more complex data or to avoid URL length limits)
+            // sessionStorage.setItem('calculationData', JSON.stringify(data));
+            // window.location.href = 'result.html'; // Redirect to result page
+        } else {
+            // Handle invalid form (maybe disable submission until it's fixed)
+            console.log('Form has errors, submission aborted.');
+        }
+    }
+
+    
+
+    // Toggle between year and month
+    document.getElementById('year-btn').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('month-btn').classList.remove('active');
+    });
+    document.getElementById('month-btn').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('year-btn').classList.remove('active');
+    });
+
+    </script>
+</body>
+
+<!-- Mirrored from one.quizzigo.com/common_calculator.html?page=Sukanya%20Samriddhi%20Account by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:47 GMT -->
+</html>

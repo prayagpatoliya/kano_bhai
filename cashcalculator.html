@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from one.quizzigo.com/cashcalculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Include Bootstrap CSS from CDN -->
+    <link href="cdn.jsdelivr.net/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // Get the user's preferred language from localStorage or default to 'en' (English)
+            const userLang = localStorage.getItem('language') || 'en';  
+            // Initialize Google Translate with the user's language preference
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',  // Original language of the page
+                    includedLanguages: 'in,hi,es,fr,pt,ru,tr,mr,the,we',  // List of languages to include in the widget
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: true  // Automatically display the widget
+                },
+                'google_translate_element'
+            );
+        
+            const observer = new MutationObserver(() => {
+                const languageSelect = document.querySelector('.goog-te-menu-value span');
+                if (languageSelect) {
+                    observer.disconnect(); // Stop observing once the widget is found
+                    setTimeout(() => {
+                        const languageLinks = document.querySelectorAll('.goog-te-menu2-item span');
+                        languageLinks.forEach((link) => {
+                            if (link.textContent.toLowerCase() === userLang.toLowerCase()) {
+                                link.click(); // Trigger the language selection
+                            }
+                        });
+                    }, 500); // Wait for the menu to fully load
+                }
+            });
+        
+            // Observe changes in the DOM
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+        </script>
+        <script type="text/javascript" src="translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+        
+    <script src="cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "72c21d48-a011-424d-9b4f-20a7aaf5d59b",
+        });
+      });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161" crossorigin="anonymous"></script>
+
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+        adConfig({
+             preloadAdBreaks: 'on',
+             sound: 'off',
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+        }
+
+        .header {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .total {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #000;
+            border-radius:0.375rem;
+            width: 50%;
+            margin: auto;
+        }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 10px;
+            background-color: #66bb6a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-calculate:hover {
+            background-color: #81c784;
+        }
+
+        #text-container {
+            font-size: 1.2rem;
+            background: #A8D683;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        tr {
+            box-shadow: 0px 7px 8px -10px;
+            border-radius: 50px;
+        }
+        input, th{
+            text-align:center;
+            border: 0 !important;
+            border-bottom: 1px solid #919b88 !important;
+        }
+        th{
+            padding: 20px !important;
+        }
+        .banner{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .goog-te-menu-frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 50px;
+        }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate, #google_translate_element {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="text-container">
+            <img src="assets/images/left-arrow.png" alt="Back" width="25px" class="float-start ms-3">
+            EMI Calculator
+        </div>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Currency</th>
+                    <th scope="col"></th>
+                    <th scope="col">Value</th>
+                    <th scope="col"></th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>₹2000</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-2000" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-2000">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹500</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-500" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-500">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹200</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-200" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-200">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹100</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-100" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-100">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹50</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-50" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-50">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹20</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-20" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-20">00 /-</span></td>
+                </tr>
+                <tr>
+                    <td>₹10</td>
+                    <td>x</td>
+                    <td><input type="number" class="form-control" id="note-10" placeholder="00" min="0"></td>
+                    <td>=</td>
+                    <td><span id="value-10">00 /-</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total p-2" id="total-amount">Total Amount:</br> 0₹</div>
+        <div class="banner">
+            <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 300px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            // Denominations with their values
+            const denominations = [
+                { id: "note-2000", value: 2000, output: "value-2000" },
+                { id: "note-500", value: 500, output: "value-500" },
+                { id: "note-200", value: 200, output: "value-200" },
+                { id: "note-100", value: 100, output: "value-100" },
+                { id: "note-50", value: 50, output: "value-50" }
+            ];
+
+            let total = 0;
+
+            // Calculate each denomination and update the total
+            denominations.forEach(denomination => {
+                const quantity = parseInt(document.getElementById(denomination.id).value) || 0;
+                const amount = quantity * denomination.value;
+                document.getElementById(denomination.output).innerText = amount;
+                total += amount;
+            });
+
+            // Update total amount
+            document.getElementById("total-amount").innerText = `Total Amount \n ${total}₹`;
+        }
+
+        // Attach event listeners to all input fields to trigger auto calculation on change
+        const inputFields = document.querySelectorAll('input[type="number"]');
+        inputFields.forEach(input => {
+            input.addEventListener('input', calculateTotal);
+        });
+    </script>
+
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="cdn.jsdelivr.net/npm/bootstrap%405.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- Mirrored from one.quizzigo.com/cashcalculator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:57:46 GMT -->
+</html>

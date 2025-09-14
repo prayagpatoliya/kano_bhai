@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from one.quizzigo.com/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:56:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="cdn.jsdelivr.net/npm/bootstrap%405.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        // Get the user's preferred language from localStorage or default to 'en' (English)
+        const userLang = localStorage.getItem('language') || 'en';  
+        // Initialize Google Translate with the user's language preference
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'en',  // Original language of the page
+                includedLanguages: 'in,hi,es,fr,pt,ru,tr,mr,the,we',  // List of languages to include in the widget
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: true  // Automatically display the widget
+            },
+            'google_translate_element'
+        );
+    
+        const observer = new MutationObserver(() => {
+            const languageSelect = document.querySelector('.goog-te-menu-value span');
+            if (languageSelect) {
+                observer.disconnect(); // Stop observing once the widget is found
+                setTimeout(() => {
+                    const languageLinks = document.querySelectorAll('.goog-te-menu2-item span');
+                    languageLinks.forEach((link) => {
+                        if (link.textContent.toLowerCase() === userLang.toLowerCase()) {
+                            link.click(); // Trigger the language selection
+                        }
+                    });
+                }, 500); // Wait for the menu to fully load
+            }
+        });
+    
+        // Observe changes in the DOM
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+    </script>
+    <script type="text/javascript" src="translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9763571275522161" crossorigin="anonymous"></script>
+    <script src="cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "72c21d48-a011-424d-9b4f-20a7aaf5d59b",
+        });
+      });
+    </script>
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+        adConfig({
+             preloadAdBreaks: 'on',
+             sound: 'off',
+        });
+    </script>
+    <style>
+        /* body {
+      background-color: #f8f9fa;
+    } */
+        /* body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        } */
+
+        .header {
+            background-color: #8bc34a;
+            padding: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 0.7rem;
+            margin: 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-weight: 500;
+        }
+
+        .card img {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .content-row {
+            padding: 20px;
+        }
+
+        .play_btn {
+            background-color: white;
+            margin: 16px 16px 0 16px;
+            padding: 16px;
+            border-radius: var(--rounded);
+            border: 1px solid var(--border-color);
+            /* box-shadow: rgba(0, 0, 0, 0.25) 0 12px 22px -12px; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 30px 1px;
+            text-align: center;
+        }
+
+        .play_btn_txt {
+            font-size: 11px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .click_btn {
+            background-color: var(--btn_bg);
+            margin-top: 10px;
+            padding: 10px 20px 10px 20px;
+            font-size: 16px;
+            color: var(--btn-text-colo);
+            border-radius: 12px;
+            box-shadow: var(--btn-boxShadow);
+            /* border: none; */
+            border: 1px solid #000;
+            color: #000;
+        }
+        .click_btn:hover{
+            background: #35548a;
+            color: #fff;
+        }
+
+        .banner{
+            width: 100%;
+            /* height: 300px; */
+            display: flex;
+            justify-content: center;
+        }
+        
+        .goog-te-menu-frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 50px;
+        }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate, #google_translate_element {
+            display: none !important;
+        }
+
+
+    </style>
+    <script>
+        function openAndRedirect() {
+            // Open a URL (e.g., open a new window or tab)
+            // window.open('https://gameloop.milodygames.com/game/index.html?tp=7000', '_blank'); // Opens the URL in a new tab
+            
+            // Redirect to a different page
+            // setTimeout(function() {
+                window.location.href = 'category.html'; // Redirect after 2 seconds
+            // }, 2000); // Adjust time as needed
+        }
+
+        function showRewardedAd(gameUrl) {
+            // Check if the ad has already been shown
+            if (sessionStorage.getItem("adShown") === "true") {
+                console.log("Ad already shown. Redirecting...");
+                window.location.href = gameUrl;
+                return;
+            }
+
+            // Display the rewarded ad
+            try {
+                adBreak({
+                    type: 'reward', // Rewarded ad placement
+                    name: 'game_started', // Descriptive name for the ad placement
+                    beforeReward: (showAdFn) => {
+                        console.log("beforeReward");
+                        showAdFn(); // Call the show function to display the ad
+                    },
+                    adDismissed: () => {
+                        console.log("Ad dismissed by the user.");
+                    },
+                    adViewed: () => {
+                        console.log("Ad successfully viewed.");
+                    },
+                    adBreakDone: (placementInfo) => {
+                        console.log("Ad break status:", placementInfo.breakStatus);
+
+                        if (placementInfo.breakStatus === "viewed") {
+                            console.log("Ad fully viewed, granting reward.");
+                            sessionStorage.setItem("adShown", "true");
+                            window.location.href = gameUrl; // Redirect to the game
+                        } else {
+                            console.log("Ad not available or skipped.");
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error displaying rewarded ad:", error);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <div class="header">
+                    <h1>EMI Calculator ✨</h1>
+                    <h4 style="color: #3A621A;">Loan Planner</h4>
+                    <p>Calculate your loan installments effortlessly with our EMI Loan Calculator. Stay on top of your
+                        repayments and manage your finances with ease.</p>
+                </div>
+                <div class="play_btn">
+                    <div class="play_btn_txt">Redeem rewards to use our EMI Calculator Guide</div>
+                    <a href="#goto_top" onclick="showRewardedAd('#goto_top')" class="smooth-scroll" aria-label="Lets Play Button">
+                      <button type="button" class="click_btn">Lets Play</button>
+                    </a>
+                </div>
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-7 mb-3 p-0">
+                            <!-- <a href="./category.html" class="redirect-link text-decoration-none" onclick="openAndRedirect()"> -->
+                            <a href="#" class="redirect-link text-decoration-none" onclick="openAndRedirect()">
+                                <div class="card bg-light p-4" style="background-color: #FDF3DD !important;">
+                                    <div class="float-start">
+                                        <img src="assets/images/Let%e2%80%99s%20Start.png" width="50px">
+                                        <i class="fa fa-arrow-circle-right float-end" aria-hidden="true"></i>
+                                    </div>
+                                    <small>Let's Start</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-5 mb-3">
+                            <a href="https://play.google.com/store/apps" class="redirect-link text-decoration-none">
+                                <div class="card bg-light p-4" style="background-color: #E2EEF5 !important;">
+                                    <img src="assets/images/Rate%20App.png" width="50px">
+                                    <small>Rate App</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 300px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 mb-3 ps-0">
+                            <div class="card bg-light p-4 share-app" style="background-color: #FBE0E0 !important;">
+                                <img src="assets/images/Share%20App.png" width="50px">
+                                <small>Share App</small>
+                            </div>
+                        </div>
+                        <div class="col-7 mb-3 p-0">
+                            <a href="https://sites.google.com/view/emicalculatorloanplanner" class="redirect-link text-decoration-none">
+                                <div class="card bg-light p-4" style="background-color: #FDF3DD !important;">
+                                    <div class="float-start">
+                                        <img src="assets/images/Privacy%20Policy.png" width="50px">
+                                        <i class="fa fa-arrow-circle-right float-end" aria-hidden="true"></i>
+                                    </div>
+                                    <small>Privacy Policy</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                   <!--  <div class="banner">
+                        <ins class="adsbygoogle" style="display:block; width: 100% !important; height: 350px !important;" data-ad-client="ca-pub-9763571275522161" data-ad-slot="8568909053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div> -->
+
+                    <br>
+                    <div class="container">
+                        <h4>About Us: Comprehensive Loan Solutions</h4>
+                        <p>We provide financial solutions tailored to your needs. Our offerings include home loans, gold loans, vehicle loans (car and two-wheeler loans), mortgage loans, personal loans, education loans, and loans against securities.</p>
+                
+                        <h2>Our Loan Categories</h2>
+                        <ul>
+                            <li><strong>Home Loans:</strong> Make your dream of owning a home a reality.</li>
+                            <li><strong>Gold Loans:</strong> Instant funds secured by your gold.</li>
+                            <li><strong>Car and Two-Wheeler Loans:</strong> Easy financing for new and used vehicles.</li>
+                            <li><strong>Mortgage Loans:</strong> Leverage your property to meet financial needs.</li>
+                            <li><strong>Personal Loans:</strong> Flexible solutions for personal milestones.</li>
+                            <li><strong>Education Loans:</strong> Fund quality education with Baroda Vidya and Baroda Scholar loans.</li>
+                            <li><strong>Loans Against Securities:</strong> Liquidity without liquidating investments.</li>
+                        </ul>
+                
+                        <p>Explore our specialized offerings like business loans, agricultural loans, travel loans, and digital loans to meet diverse financial goals. Choose us for transparent processes, quick approvals, and customer-focused services. Let us help you achieve your dreams.</p>
+                    </div>
+                    <div id="goto_top"></div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <script src="cdn.jsdelivr.net/npm/bootstrap%405.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const shareAppButton = document.querySelector(".share-app");
+
+        shareAppButton.addEventListener("click", () => {
+            if (navigator.share) {
+                navigator
+                    .share({
+                        title: "Check out this amazing app!",
+                        text: "I've been using this app, and it's fantastic. Give it a try!",
+                        url: "https://example.com", // Replace with your app's URL
+                    })
+                    .then(() => console.log("App shared successfully!"))
+                    .catch((error) => console.error("Error sharing app:", error));
+            } else {
+                alert("Sharing not supported in this browser. Please copy the link manually!");
+            }
+        });
+        
+    });
+
+    </script>
+</body>
+
+
+<!-- Mirrored from one.quizzigo.com/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Sep 2025 18:56:54 GMT -->
+</html>
