@@ -42,7 +42,7 @@ if (getTimeZoneCountry() == "India") {
       <script>
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_002', [[320, 100], 'fluid'], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_002']);
+        googletag.defineSlot('/23293550725/index.html_002', ['fluid', [320, 100]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_002']);
         googletag.enableServices();
         googletag.display('gpt-passback');
         });
@@ -77,7 +77,7 @@ if (getTimeZoneCountry() == "India") {
       <script>
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_003', [[300, 250], [336, 280], 'fluid'], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_003']);
+        googletag.defineSlot('/23293550725/index.html_003', ['fluid', [300, 250], [336, 280]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_003']);
         googletag.enableServices();
         googletag.display('gpt-passback');
         });
@@ -113,7 +113,7 @@ if (getTimeZoneCountry() == "India") {
       <script>
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
-        googletag.defineSlot('/23293550725/index.html_004', [[336, 280], [300, 250], [468, 60], 'fluid', [320, 480]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_004']);
+        googletag.defineSlot('/23293550725/index.html_004', ['fluid', [468, 60], [336, 280], [300, 250], [320, 480]], 'gpt-passback').addService(googletag.pubads()).setTargeting('Page', ['index.html_004']);
         googletag.enableServices();
         googletag.display('gpt-passback');
         });
